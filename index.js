@@ -17,6 +17,10 @@ function submitData(name, email){
   return fetch("http://localhost:3000/users", configObj)
     .then(r=> r.json())
     .then(function(obj){
-      document.body.innerText = obj.id
+      debugger
+      document.body.innerHTML = obj.id
+    })
+    .catch(function(error){
+      document.body.innerHTML = error.message
     })
 }
